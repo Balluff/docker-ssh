@@ -13,7 +13,7 @@ RUN apk add openssh \
         && rm -rf /var/cache/apk/* /tmp/*
 
 # Add the entrypoint script
-ADD ./entrypoint.sh /usr/local/bin/
+ADD entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 22
