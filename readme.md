@@ -1,6 +1,7 @@
 # About
 
 This project provides an Alpine Linux based Docker container with SSH support.
+On the first start it creates a new random password for the root user so please follow the steps below to determine the password and work with the container.
 
 ## References
 
@@ -10,13 +11,13 @@ This project provides an Alpine Linux based Docker container with SSH support.
 
 ## Container usage
 
-Pull and run this container via:
+Pull and run this container with the following example:
 
 ```sh
 $ docker run --name test_ssh -d -p 2222:22 balluff/ssh
 ```
 
-If you the follow the example the container is executed in the background `-d` and the generated password is not displayed. So you need to have a view in the logs for the automatic generated root password:
+If you follow the example the container is executed in the background `-d` and the auto-generated password is not displayed. So you need to have a view in the logs for the automatic generated root password:
 
 ```sh
 $ docker logs test_ssh

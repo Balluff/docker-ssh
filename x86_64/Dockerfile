@@ -6,8 +6,9 @@ LABEL Vendor "Balluff"
 LABEL Name "SSH container"
 
 # Upgrade the base system and install openssh
-RUN apk --no-cache upgrade
-RUN apk add --no-cache openssh \
+# Also edit the SSH config to permit root access
+RUN apk update && apk upgrade
+RUN apk add openssh \
         && sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
         && rm -rf /var/cache/apk/* /tmp/*
 
