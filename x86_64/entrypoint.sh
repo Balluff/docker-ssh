@@ -5,12 +5,12 @@ ssh-keygen -A
 
 # Check wether a random root-password is provided
 # https://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/
-if [ ! -f /home/pwd.txt ]
+if [ ! -f /tmp/pwd.txt ]
 then
     echo "Generate a new root password... "
-    echo "root:"`(< /dev/urandom tr -dc A-Z-a-z-0-9 | head -c${1:-12};echo)` >> /home/pwd.txt
-    cat /home/pwd.txt
-    cat /home/pwd.txt | chpasswd
+    (< /dev/urandom tr -dc A-Z-a-z-0-9 | head -c${1:-12};echo) >> /tmp/pwd.txt
+    cat /tmp/pwd.txt
+    echo "root:`cat /tmp/pwd.txt`" | chpasswd
 fi
 
 # Do not detach (-D), log to stderr (-e), passthrough other arguments

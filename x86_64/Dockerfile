@@ -4,13 +4,15 @@ LABEL Maintainer "Andreas Elser"
 LABEL Version "1.0"
 LABEL Vendor "Balluff"
 LABEL Name "SSH container"
+LABEL Architecture "x86_64"
 
 # Upgrade the base system and install openssh
-# Also edit the SSH config to permit root access
 RUN apk update && apk upgrade
 RUN apk add openssh \
-        && sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
         && rm -rf /var/cache/apk/* /tmp/*
+
+# Add SSHD config
+ADD etc/ssh/sshd_config /etc/ssh/sshd_config
 
 # Add the entrypoint script
 ADD entrypoint.sh /usr/local/bin/
