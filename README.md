@@ -8,6 +8,7 @@ On the first start it creates a new random password for the root user so please 
 - Official [Alpine Docker Hub image](https://hub.docker.com/_/alpine/) as base
 - Password generation from [How-To Geek](https://www.howtogeek.com/howto/30184/10-ways-to-generate-a-random-password-from-the-command-line/)
 - [Redirect user and password information from file to chpasswd](https://www.howtoforge.com/linux-chpasswd-command/)
+- [SSHPASS](https://www.cyberciti.biz/faq/noninteractive-shell-script-ssh-password-provider/) application for script based SSH access
 
 ## Container usage
 
@@ -80,3 +81,9 @@ sut_ssh exited with code 0
 Finish and stop the current compose service with `CTRL` + `C` and enter `docker-compose -f docker-compose.test.yml down` to cleanup your system.
 
 **Note:** Just the container and networks will be removed. If you want to delete the volume with the stored data inside you need to run `docker volume rm {VOLUME NAME}`.
+
+## Architecture
+
+The following picture shows the test scenario based on the scripts between the server and client.
+
+![ssh_container_server_client_tests](https://raw.githubusercontent.com/Balluff/docker-ssh/master/architecture/ssh_container_server_client_tests.png)
