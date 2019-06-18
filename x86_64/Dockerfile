@@ -1,9 +1,9 @@
 FROM alpine:3.8
 
-LABEL Maintainer "Andreas Elser"
-LABEL Version "1.0"
+LABEL Maintainer "Balluff SHW"
+LABEL Version "3.8"
 LABEL Vendor "Balluff"
-LABEL Name "SSH container"
+LABEL Name "SSH server in a container"
 LABEL Architecture "x86_64"
 
 # Upgrade the base system and install openssh
