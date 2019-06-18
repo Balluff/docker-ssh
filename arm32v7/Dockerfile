@@ -1,7 +1,7 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 LABEL Maintainer "Balluff SHW"
-LABEL Version "3.8"
+LABEL Version "3.9"
 LABEL Vendor "Balluff"
 LABEL Name "SSH server in a container"
 LABEL Architecture "arm32v7"
