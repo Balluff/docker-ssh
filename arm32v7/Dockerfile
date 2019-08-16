@@ -1,4 +1,4 @@
-ARG VERSION=3.9
+ARG VERSION=3.8
 FROM alpine:${VERSION}
 
 LABEL Maintainer "Balluff SHW"
