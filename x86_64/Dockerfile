@@ -1,4 +1,5 @@
-FROM alpine:3.9
+ARG VERSION=3.9
+FROM alpine:${VERSION}
 
 LABEL Maintainer "Balluff SHW"
 LABEL Version "3.9"
